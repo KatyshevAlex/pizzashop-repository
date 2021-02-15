@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
@@ -13,7 +14,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @Table(name = "topping", schema = "pizzashop")
 @SequenceGenerator(name = "sq_topping", sequenceName = "sq_topping", allocationSize = 1, schema = "pizzashop")
-public class Topping {
+public class Topping  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_topping")

@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
@@ -15,7 +16,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @Table(name = "privileges", schema = "pizzashop")
 @SequenceGenerator(name = "sq_privileges", sequenceName = "sq_privileges", allocationSize = 1, schema = "pizzashop")
-public class Privilege {
+public class Privilege  implements Serializable {
 
     public Privilege(PrivilegeType pt){
         this.privilegeType = pt;

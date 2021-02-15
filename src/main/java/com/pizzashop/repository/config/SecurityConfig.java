@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
+                .antMatchers("/v2/api-docs").permitAll()
                 .antMatchers(HttpMethod.POST, "/dao/find-customer").hasAnyRole(RoleType.ROLE_APPLICATION.getThisAndHigherPriorities())
                 .antMatchers(HttpMethod.PUT, "/dao/update-customer").hasAnyRole(RoleType.ROLE_APPLICATION.getThisAndHigherPriorities())
                 .antMatchers(HttpMethod.PUT, "/dao/create-customer").hasAnyRole(RoleType.ROLE_APPLICATION.getThisAndHigherPriorities())

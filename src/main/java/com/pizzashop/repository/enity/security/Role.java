@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
@@ -16,7 +17,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @Table(name = "roles", schema = "pizzashop")
 @SequenceGenerator(name = "sq_roles", sequenceName = "sq_roles", allocationSize = 1, schema = "pizzashop")
-public class Role {
+public class Role  implements Serializable {
 
     public Role(RoleType rt){
         this.roleType = rt;
